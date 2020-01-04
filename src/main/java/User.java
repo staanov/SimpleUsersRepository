@@ -4,6 +4,9 @@ public class User {
     private String firstName;
     private String secondName;
 
+    public User() {
+    }
+
     public User(String login, String password, String firstName, String secondName) {
         this.login = login;
         this.password = password;
@@ -13,6 +16,10 @@ public class User {
 
     public String getLogin() {
         return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
