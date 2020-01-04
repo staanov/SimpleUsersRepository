@@ -1,2 +1,4 @@
-UserRepository.class
+UserDaoInterface.class
+UserService.class
+UserDao.class
 User.class
