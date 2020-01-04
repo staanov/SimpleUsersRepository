@@ -6,7 +6,7 @@ public class User {
     @Id
     @Column(name = "login")
     private String login;
-    
+
     @Column(name = "password")
     private String password;
 
