@@ -1,6 +1,7 @@
 # SimpleUsersRepository
-![alt text](https://drive.google.com/open?id=1jsXWNH-MfEJbA0JxbYEosSWmYLgB1VgJ)
-Учебный Maven-проект. Простое хранилище пользователей (логин, пароль, имя, фамилия).
+![alt text](https://i.ibb.co/Fq966hv/iconfinder-flag-russia-92968.png)
+Учебный Maven-проект для тренировки работы с базой данных при помощи Hibernate и написания Unit-тестов.
+Представляет собой простое хранилище пользователей с полями (логин, пароль, имя, фамилия).
 Использованные технологии:
 * PostgreSQL для хранения пользователей;
 * Hibernate для операций с базой данных;
