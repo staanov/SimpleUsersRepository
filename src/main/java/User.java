@@ -1,7 +1,7 @@
 import javax.persistence.*;
 
 @Entity
-@Table(name = "userrepo")
+@Table(name = "users")
 public class User {
     @Id
     @Column(name = "login")
