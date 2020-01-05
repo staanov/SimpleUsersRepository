@@ -3,6 +3,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import javax.imageio.spi.ServiceRegistry;
@@ -37,15 +38,12 @@ public class UserDao implements UserDaoInterface<User, String> {
     }
 
     private static SessionFactory getSessionFactory() {
-        ServiceRegistry serviceRegistry = (ServiceRegistry) new StandardServiceRegistryBuilder()
-                .loadProperties("hibernate.properties")
+        StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+                .configure()
                 .build();
-
-        Metadata metadata = new MetadataSources((org.hibernate.service.ServiceRegistry) serviceRegistry)
-                .addAnnotatedClass(User.class)
-                .buildMetadata();
-
-        return metadata.buildSessionFactory();
+        MetadataSources metadataSources = new MetadataSources(serviceRegistry).addAnnotatedClass(User.class);
+        Metadata metadata = metadataSources.getMetadataBuilder().build();
+        return metadata.getSessionFactoryBuilder().build();
     }
 
     public Session getCurrentSession() {
