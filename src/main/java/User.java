@@ -15,16 +15,16 @@ public class User {
     private String firstName;
 
     @Column(name = "last_name")
-    private String secondName;
+    private String lastName;
 
     public User() {
     }
 
-    public User(String login, String password, String firstName, String secondName) {
+    public User(String login, String password, String firstName, String lastName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.lastName = lastName;
     }
 
     public String getLogin() {
@@ -43,8 +43,8 @@ public class User {
         return firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return lastName;
     }
 
     public void setPassword(String password) {
@@ -55,8 +55,8 @@ public class User {
         this.firstName = firstName;
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class User {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
+                ", secondName='" + lastName + '\'' +
                 '}';
     }
 
@@ -77,11 +77,11 @@ public class User {
         return login.equals(user.login) &&
                 password.equals(user.password) &&
                 firstName.equals(user.firstName) &&
-                secondName.equals(user.secondName);
+                lastName.equals(user.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(login, password, firstName, secondName);
+        return Objects.hash(login, password, firstName, lastName);
     }
 }
