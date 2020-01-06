@@ -39,8 +39,4 @@ public class UserService {
         userDao.deleteUser(user);
         userDao.closeCurrentSessionWithTransaction();
     }
-
-    public UserDao userDao() {
-        return userDao;
-    }
 }
