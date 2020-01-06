@@ -50,6 +50,11 @@ class UserServiceTest {
 
     @Test
     void updateUser() {
+        User testUser = new User("Antonio", "fk399kKS", "Anton", "Ivanov");
+        userService.insertUser(testUser);
+        testUser.setLastName("Petrov");
+        userService.updateUser(testUser);
+        assertEquals("Petrov", userService.getUser("Antonio").getLastName());
     }
 
     @Test
@@ -59,9 +64,5 @@ class UserServiceTest {
         userService.deleteUser(testUser.getLogin());
         Optional<User> optionalUser = Optional.ofNullable(userService.getUser(testUser.getLogin()));
         assertFalse(optionalUser.isPresent());
-    }
-
-    @Test
-    void userDao() {
     }
 }
