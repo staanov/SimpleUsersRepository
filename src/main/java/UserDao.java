@@ -13,17 +13,18 @@ import java.util.List;
 public class UserDao implements UserDaoInterface<User, String> {
     private Session currentSession;
     private Transaction currentTransaction;
+    private SessionFactory currentSessionFactory = getSessionFactory();
 
     public UserDao() {
     }
 
     public Session openCurrentSession() {
-        currentSession = getSessionFactory().openSession();
+        currentSession = currentSessionFactory.openSession();
         return currentSession;
     }
 
     public Session openCurrentSessionWithTransaction() {
-        currentSession = getSessionFactory().openSession();
+        currentSession = currentSessionFactory.openSession();
         currentTransaction = currentSession.beginTransaction();
         return currentSession;
     }
@@ -60,6 +61,14 @@ public class UserDao implements UserDaoInterface<User, String> {
 
     public void setCurrentTransaction(Transaction currentTransaction) {
         this.currentTransaction = currentTransaction;
+    }
+
+    public SessionFactory getCurrentSessionFactory() {
+        return currentSessionFactory;
+    }
+
+    public void setCurrentSessionFactory(SessionFactory currentSessionFactory) {
+        this.currentSessionFactory = currentSessionFactory;
     }
 
     @Override
