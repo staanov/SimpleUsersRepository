@@ -12,7 +12,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
         <hibernate.version>5.4.10.Final</hibernate.version>
-        <postgresql.version>42.2.8</postgresql.version>
+        <postgresql.version>42.3.3</postgresql.version>
         <embedded.postgresql.version>0.13.1</embedded.postgresql.version>
         <junit.version>5.5.2</junit.version>
         <jacoco.version>0.8.3</jacoco.version>
